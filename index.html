@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>誕生日からわかる今年の運勢</title>
+</head>
+<body>
+    <h1>誕生日からわかる今年の運勢</h1>
+    <h2>占いたい人の名前と誕生日を入れてください</h2>
+
+    <div>
+    <label for="name">名前: </label><input type="text" id="name" size="40">
+    </div>
+
+    <div>
+    <label for="birthday">誕生日: </label><input type="date" id="birthday" max="9999-12-31">
+    </div>
+    <button id="assessment">診断する</button>
+    
+    <div id="result-area"></div>
+
+    <script src="fortune.js"></script>
+</body>
+</html>
