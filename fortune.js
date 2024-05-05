@@ -1,9 +1,10 @@
 'use strict';
 
-// Inputから取得
+// HTMLから取得
 const userNameInput = document.getElementById('name');
 const birthdayInput = document.getElementById('birthday');
 const assessmentButton = document.getElementById('assessment');
+const resultDivision = document.getElementById('result-area');
 
 // 診断ボタンが押された時の挙動
 assessmentButton.addEventListener(
@@ -16,10 +17,31 @@ assessmentButton.addEventListener(
             return;
         } else {
             console.log('入力内容:', userName, birthday); // test
-            // 実行
+
+            // 診断結果の表示
+            
+            // 表示エリアのリセット
+            resultDivision.innerText = "";
+
+            // header
+            const headerDivision = document.createElement('div');
+            headerDivision.setAttribute('class', 'card-header');
+            headerDivision.innerText = '診断結果';
+            // body
+            const bodyDivision = document.createElement('div');
+            bodyDivision.setAttribute('class', 'card-body');
+            // text
+            const textDivision = document.createElement('h5');
+            textDivision.setAttribute('class', 'card-text');
             const result = assessment(userName, birthday);
             console.log(result); // test
-            // TODO 診断結果の表示
+            textDivision.innerText = result;
+            bodyDivision.appendChild(textDivision);
+            // bootstrapの適応
+            resultDivision.setAttribute('class', 'card');
+            // resultDivisionに差し込み
+            resultDivision.appendChild(headerDivision);
+            resultDivision.appendChild(bodyDivision);
             
         }
 
